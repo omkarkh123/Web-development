@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Form Validation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+            <form action="ajax.php" method="post" id="register-form" >
+                        <input type="text" class="form-control"  id="email" name="email"  placeholder="email"/><br /><br />
+                        <input type="password" class="form-control" id="password" name="password"  placeholder="password"/><br /><br />
+                        <button type="submit" id="Login" class="btn btn-success btn-block">Login</button>                    </form>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://bladephp.co/download/js/jquery.validate.min.js"></script>	
+<script>
+$(function() {
+	  
+	$("#register-form").validate({
+	  rules: {
+		
+			email: {
+				required: true,
+				email: true
+			},
+			password: {
+				required: true,
+				number: true,
+				minlength: 5
+			}
+		},
+		messages: {
+			
+			password: {
+				required: "Please provide a password",
+				number: "Please provide a Numeric value",
+				minlength: "Your password must be at least 5 characters long"
+			},
+			email: "Please enter a valid email address",
+		},
+
+		submitHandler: function(form) {
+			$.ajax({
+				url: form.action,
+				type: form.method,
+				data: $(form).serialize(),
+				dataType: "json",
+				success: function(response) {
+					alert(response.message);
+					location.reload();
+				}            
+			});
+		}
+	});
+	
+	jQuery.validator.addMethod("lettersonly", function(value, element) {
+	  return this.optional(element) || /^[a-z]+$/i.test(value);
+	}, "Letters only please"); 
+
+});
+</script>
+</body>
+</html>

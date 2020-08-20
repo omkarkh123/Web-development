@@ -1,0 +1,76 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar-inverse{
+    background-color: transparent;
+    border-color: transparent;
+}
+.navbar-inverse .navbar-brand{
+    color: #fff;
+    font-size: 40px;
+    padding: 40px 15px;
+    font-weight: 900;
+}
+.nav.navbar-nav.navbar-right{
+    margin: 25px 0;
+}
+.navbar-inverse .navbar-nav > li > a{
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h1{
+    font-size: 50px;
+    color: white;
+}
+img{
+    width: 130px;
+    height: 130px;
+    border-radius: 100px;
+    margin-left: 230px;
+    transition: 1s;
+}
+img:hover{
+    -webkit-transform: scale(1.8);
+}
+.form-control{
+    background: transparent;
+    border-radius: 0px;
+    border: 0px;
+    border-bottom: 2px solid lightgreen;
+    font-size: 21px;
+    margin-top: 18px;
+    padding: 23px;
+    color: white;
+}
+.form-check-label{
+    color: white;
+}
+.col-md-6{
+    -webkit-box-shadow: 1px 4px 26px 11px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 4px 26px 11px rgba(0,0,0,0.75);
+box-shadow: 1px 4px 26px 11px rgba(0,0,0,0.75);
+border-radius: 0px 100px 0px 100px;
+margin-top: 80px;
+height: 600px;
+background: rgba(0,0,0,0.6);
+}
+a{
+    color: white;
+    text-decoration: blink;
+}
+a:hover{
+    color: skyblue;
+}
+.type{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
